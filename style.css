@@ -1,38 +1,59 @@
-body{
-  background-color:aliceblue;
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
 }
+
+body {
+  background-color: aliceblue;
+}
+
+/* transform-origin */
+
+#seconds, #minutes, #hours {
+  position: absolute;
+}
+
 #clock {
+  background-image: url("clock.png");
+  background-size: contain;
   width: 400px;
   height: 400px;
   margin: 20px auto;
   border: 10px solid black;
   border-radius: 50%;
   position: relative;
+}
 
+#hours {
+  width: 8px;
+  height: 120px;
+  background-color: rgb(133, 102, 102);
+  margin-left: 200px;
+  margin-top: 80px;
+  transform-origin: 0px bottom;
+  animation: rotate 43200s infinite linear;
+  z-index: 3;
+}
+
+#minutes {
+  width: 6px;
+  height: 140px;
+  background-color: rgb(76, 173, 173);
+  margin-left: 201px;
+  margin-top: 60px;
+  transform-origin: 0px bottom;
+  animation: rotate 3600s infinite linear;
+  z-index: 2;
 }
 
 #seconds {
   width: 4px;
   height: 180px;
   background-color: gray;
-  margin-left: 198px;
-  margin-top: 20px;
+  margin-left: 199px;
+  margin-top: 22px;
+  transform-origin: 0px bottom;
+  animation: rotate 60s infinite linear;
+  z-index: 1;
 }
-
-#minutes {
-  width: 6px;
-  height: 140px;
-  background-color: darkslategray;
-  margin-left: 198px;
-  margin-top: 20px;
-}
-
-#hours {
-  width: 8px;
-  height: 120px;
-  background-color: black;
-  margin-left: 196px;
-  margin-top: 80px;
- 
-}
-
